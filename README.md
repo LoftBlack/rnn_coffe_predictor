@@ -16,8 +16,21 @@ Prever os preços do café para os próximos 5 dias, utilizando uma janela desli
 ## 🚀 Como Executar
 
 1. Clone este repositório:
-   ```bash
+   ```
    git clone https://github.com/LoftBlack/rnn_coffe_predictor.git
    cd rnn_coffe_predictor
-
-  
+2. Crie e ative um ambiente virtual:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # Linux/Mac
+   .\venv\Scripts\activate    # Windows
+3.Instale as dependências:
+   ```
+   pip install -r requirements.txt
+   ```
+4.Execute o script principal:
+```
+   python main.py
+```
+📈 Resultados
+O script gera gráficos que mostram a comparação entre os preços reais e previstos, tanto em série temporal quanto em dispersão para os dias 1 e 5 da previsão.

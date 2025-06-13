@@ -2,7 +2,6 @@ import os
 import yfinance as yf
 import numpy as np
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
@@ -107,17 +106,6 @@ def salvar_grafico(nome):
     plt.savefig(f'graficos/{nome}')
     plt.show()
 
-# Matriz de correlação
-correlation_matrix = df.corr()
-
-# Foco na correlação com o preço do café
-print(correlation_matrix['PrecoCafe'].sort_values(ascending=False))
-
-# Mapa de calor visual
-plt.figure(figsize=(10,8))
-sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
-plt.title('Matriz de Correlação')
-plt.show()
 # ========== 12. GRÁFICO DE DISPERSÃO: DIA +1 ==========
 plt.figure(figsize=(8, 6))
 plt.scatter(y_test_day1, y_pred_day1, alpha=0.5, color='blue')

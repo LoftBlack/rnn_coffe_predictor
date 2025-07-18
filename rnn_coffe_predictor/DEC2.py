@@ -64,22 +64,42 @@ def transform_and_aggregate(dataframes):
 
 def fetch_coffee_prices(start_date, end_date):
     try:
-        coffee_data = yf.download(COFFEE_FUTURES_SYMBOL, start=start_date, end=end_date, group_by="ticker")
-        
-        # Remove MultiIndex de qualquer profundidade
-        coffee_data.columns = ['_'.join(col).strip() if isinstance(col, tuple) else col for col in coffee_data.columns]
+        coffee_data = yf.download(COFFEE_FUTURES_SYMBOL, start=start_date, end=end_date)
 
+        if coffee_data.empty:
+            logging.warning("Nenhum dado foi retornado para o símbolo KC=F.")
+            return pd.DataFrame()
+
+        # Resetar índice
         coffee_data = coffee_data.reset_index()
+
+        # Extrair ano da coluna de data
         coffee_data['Year'] = pd.to_datetime(coffee_data['Date']).dt.year
 
-        annual_avg = coffee_data.groupby('Year', as_index=False)['Close'].mean()
-        annual_avg.rename(columns={'Close': 'PrecoCafe_MediaAnual'}, inplace=True)
+        # Calcular média anual da coluna ('Close', 'KC=F') ou equivalente
+        if isinstance(coffee_data.columns, pd.MultiIndex):
+            close_col = ('Close', 'KC=F')
+        else:
+            close_col = 'Close'
+
+        annual_avg = coffee_data.groupby('Year')[[close_col]].mean()
+        annual_avg.columns = ['PrecoCafe_MediaAnual']
+        annual_avg = annual_avg.reset_index()
+
+        # Remover MultiIndex caso ainda exista
+        if isinstance(annual_avg.columns, pd.MultiIndex):
+            annual_avg.columns = ['_'.join(col).strip() if isinstance(col, tuple) else col for col in annual_avg.columns]
+
+        # Corrigir nomes, se necessário
+        annual_avg.rename(columns={'Year_': 'Year', 'PrecoCafe_MediaAnual_KC=F': 'PrecoCafe_MediaAnual'}, inplace=True)
 
         logging.info("Média anual do preço do café calculada com sucesso.")
         return annual_avg
+
     except Exception as e:
         logging.error(f"Erro ao obter dados de preços de café: {e}")
         return pd.DataFrame()
+
 
 def merge_data(master_df, coffee_price_df):
     merged_df = master_df.merge(coffee_price_df, left_on='Ano', right_on='Year', how='outer')

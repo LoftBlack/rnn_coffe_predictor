@@ -1,0 +1,45 @@
+====================================================================
+  ANÁLISE COM DELAY +5 DIAS — Score Bluesky → Café KC=F
+====================================================================
+
+Hipótese testada : score de HOJE prevê preço daqui 5 pregões
+Observações válidas: 122
+Período            : 2025-04-07 → 2026-05-01
+
+── CORRELAÇÃO: Score (D) × Retorno KC=F (D+5) ─────────────────
+  Pearson r  = -0.0536   p=0.5575  ✗ não significativo
+  Spearman ρ = -0.0480   p=0.5992  ✗ não significativo
+
+── CORRELAÇÃO: Score (D) × Var. Acumulada D→D+5 (%) ────────────
+  Pearson r  = -0.1894   p=0.0367  ✓ SIGNIFICATIVO (p<0.05)
+  Spearman ρ = -0.1838   p=0.0427  ✓ SIGNIFICATIVO (p<0.05)
+
+── CORRELAÇÃO: Score (D) × Preço absoluto D+5 ─────────────────
+  Pearson r  = +0.1673   p=0.0655  ✗ não significativo
+
+── REGRESSÃO LINEAR (Score → Retorno D+5) ──────────────────────
+  Coeficiente: -2.6848  (cada +0.1 no score → -0.268% no retorno)
+  R²         : 0.0029  (o score explica 0.29% da variância do retorno)
+
+── REGRESSÃO LINEAR (Score → Var. Acumulada D+5) ───────────────
+  Coeficiente: -22.3252
+  R²         : 0.0359  (3.59% da variância explicada)
+
+── TESTE-T: Score alto vs Score baixo ───────────────────────────────
+  Retorno médio (score alto)  : -0.1172%
+  Retorno médio (score baixo) : +0.0612%
+  Diferença                   : -0.1785%
+  t-stat=-0.474  p=0.6365  ✗ não significativo
+
+── ACURÁCIA DIRECIONAL ───────────────────────────────────────────────
+  Score alto → retorno positivo (ou baixo → negativo): 48.4%
+  (referência aleatória: 50%)
+
+── INTERPRETAÇÃO ────────────────────────────────────────────────────
+  ❌ Correlação não significativa: não há evidência de que
+     o score antecipa o retorno do café em +5 pregões.
+  📉 Acurácia direcional abaixo de 50% — sem poder de direção.
+
+====================================================================
+Arquivos salvos em: C:\Users\joao3\Desktop\IC_Cafe\dados_graficos_bluesky\Dados_delay
+====================================================================

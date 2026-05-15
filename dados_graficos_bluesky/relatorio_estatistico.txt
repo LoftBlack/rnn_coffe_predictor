@@ -1,0 +1,41 @@
+=================================================================
+  RELATÓRIO DE ANÁLISE — BLUESKY + CAFÉ (KC=F)
+=================================================================
+
+Período dos posts   : 2025-04-07 → 2026-05-01
+Total de posts      : 8,352
+Autores únicos      : 5,183
+Dias com dados      : 160
+
+── FINANCIAL SCORE ──────────────────────────────────────
+  Média             : 0.5917
+  Mediana           : 0.5742
+  Desvio padrão     : 0.0590
+  Mínimo            : 0.4638
+  Máximo            : 0.8522
+  % score > 0.5     : 99.8%
+
+── ENGAJAMENTO ──────────────────────────────────────────
+  Total likes       : 38,613
+  Total reposts     : 8,690
+  Total replies     : 4,449
+  Likes/post (med.) : 4.62
+
+── KC=F (CAFÉ ARÁBICA) ──────────────────────────────────
+  Período           : 2025-03-31 → 2026-05-07
+  Close mínimo      : 280.05
+  Close máximo      : 432.35
+  Close médio       : 348.69
+  Retorno período   : -23.36%
+  Volatilidade (σ)  : 43.32
+
+── CORRELAÇÃO (dias sobrepostos) ────────────────────────
+  Dias em comum     : 122
+  Pearson r         : 0.2371  (p=0.0086)
+  Spearman ρ        : 0.2764  (p=0.0021)
+  → Correlação de Pearson estatisticamente significativa (p<0.05)
+
+=================================================================
+Arquivos salvos em:
+C:\Users\joao3\Desktop\IC_Cafe\dados_graficos_bluesky
+=================================================================

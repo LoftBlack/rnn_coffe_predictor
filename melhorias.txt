@@ -1,0 +1,2 @@
+possivel nova metrica: fechamento - abertura / volume (talvez o volume não)
+possivel nova feacture: uma rede de perceptons que vai servir de agente para adicionar os dados da DEC2

@@ -24,8 +24,8 @@ from sklearn.metrics import r2_score
 warnings.filterwarnings("ignore")
 
 # ── Caminhos ───────────────────────────────────────────────────────────────
-INPUT_DIR  = Path(r"C:\Users\joao3\Desktop\IC_Cafe\bluesky\BlueSky.py\data_with_score")
-OUTPUT_DIR = Path(r"C:\Users\joao3\Desktop\IC_Cafe\dados_graficos_bluesky\Dados_delay")
+INPUT_DIR  = Path(r"C:\Users\joao3\Desktop\IC_Cafe\dados_graficos_bluesky")
+OUTPUT_DIR = Path(r"C:\Users\joao3\Desktop\IC_Cafe\dados_graficos_bluesky\Dados_delay_2")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 DELAY = 5   # dias de antecedência testados

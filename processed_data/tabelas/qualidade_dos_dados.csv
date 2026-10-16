@@ -1,0 +1,13 @@
+﻿coluna,tipo,valores_ausentes,percentual_ausente,valores_unicos
+temp_max_c,float64,0,0.0,161
+temp_min_c,float64,0,0.0,144
+temp_media_c,float64,0,0.0,144
+precipitacao_mm,float64,0,0.0,253
+vento_vel,float64,0,0.0,197
+evapotranspiracao_mm,float64,0,0.0,508
+cafe_abertura_usc_lb,float64,681,31.07,1242
+cafe_maxima_usc_lb,float64,681,31.07,1282
+cafe_minima_usc_lb,float64,681,31.07,1251
+cafe_fechamento_usc_lb,float64,681,31.07,1263
+cafe_volume_contratos,float64,681,31.07,1042
+cafe_retorno_diario_pct,float64,682,31.11,1496

@@ -34,7 +34,7 @@ LATITUDE   = -19.9167
 LONGITUDE  = -43.9345
 LOCAL_NOME = "Belo Horizonte, MG"
 START_DATE = "2020-01-01"
-END_DATE   = "2024-12-31"
+END_DATE   = "2025-12-31"
 
 OUTPUT_DIR = "noaa_resultados"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -50,7 +50,7 @@ def extrair() -> pd.DataFrame:
     print(f"{'='*52}")
     print("  → Buscando dados Open-Meteo...", end="", flush=True)
 
-    url = "https://archive.open-meteo.com/v1/archive"
+    url = "https://archive-api.open-meteo.com/v1/archive"
     params = {
         "latitude":        LATITUDE,
         "longitude":       LONGITUDE,

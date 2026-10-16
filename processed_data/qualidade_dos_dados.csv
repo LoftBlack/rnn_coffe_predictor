@@ -1,0 +1,7 @@
+﻿coluna,tipo,valores_ausentes,percentual_ausente,valores_unicos
+TMAX,float64,0,0.0,141
+TMIN,float64,0,0.0,123
+TMEAN,float64,0,0.0,123
+PRCP,float64,0,0.0,167
+VENTO,float64,0,0.0,171
+ETP,float64,0,0.0,386

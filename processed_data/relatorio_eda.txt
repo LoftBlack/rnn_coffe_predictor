@@ -1,0 +1,40 @@
+RELATÓRIO DE ANÁLISE EXPLORATÓRIA — IC_CAFE
+============================================================
+Arquivo de origem: C:\Users\joao3\Desktop\IC_Cafe\noaa_resultados\dados_brutos.csv
+Período configurado: 2020-01-01 a 2025-12-31
+Registros analisados: 864
+Colunas analisadas: 6
+Data inicial encontrada: 2020-01-01 00:00:00
+Data final encontrada: 2025-12-12 00:00:00
+Linhas duplicadas (considerando o índice): 0
+Total de células ausentes: 0
+
+COLUNAS E TIPOS
+           tipo  valores_ausentes  percentual_ausente  valores_unicos
+coluna                                                               
+TMAX    float64                 0                 0.0             141
+TMIN    float64                 0                 0.0             123
+TMEAN   float64                 0                 0.0             123
+PRCP    float64                 0                 0.0             167
+VENTO   float64                 0                 0.0             171
+ETP     float64                 0                 0.0             386
+
+ESTATÍSTICAS DESCRITIVAS
+       count     mean     std    min   25%    50%      75%    max  mediana  assimetria  variancia
+TMAX   864.0  26.0512  2.8427  16.30  24.1  26.00  27.9000  35.70    26.00      0.2291     8.0808
+TMIN   864.0  16.4947  2.7147   8.90  14.6  17.10  18.6000  22.40    17.10     -0.5685     7.3696
+TMEAN  864.0  20.8964  2.4652  14.00  19.3  21.05  22.6000  28.30    21.05     -0.1335     6.0770
+PRCP   864.0   3.9372  9.0344   0.00   0.0   0.20   2.9250  87.40     0.20      4.1032    81.6197
+VENTO  864.0  15.3101  3.8268   6.30  12.6  15.00  17.8000  30.60    15.00      0.5159    14.6444
+ETP    864.0   4.1369  1.1186   0.82   3.4   4.02   4.8325   8.06     4.02      0.1574     1.2513
+
+MATRIZ DE CORRELAÇÃO
+         TMAX    TMIN   TMEAN    PRCP   VENTO     ETP
+TMAX   1.0000  0.6025  0.9087 -0.1997 -0.0545  0.7992
+TMIN   0.6025  1.0000  0.8600  0.2864 -0.0385  0.2272
+TMEAN  0.9087  0.8600  1.0000 -0.0060 -0.0817  0.6149
+PRCP  -0.1997  0.2864 -0.0060  1.0000  0.0469 -0.4384
+VENTO -0.0545 -0.0385 -0.0817  0.0469  1.0000  0.0726
+ETP    0.7992  0.2272  0.6149 -0.4384  0.0726  1.0000
+
+Não foi identificada automaticamente uma coluna de preço do café. Confira os nomes das colunas no CSV.

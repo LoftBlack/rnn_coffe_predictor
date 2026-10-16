@@ -1,0 +1,14 @@
+﻿coluna_final,coluna_original,fonte,descricao,unidade,agregacao_mensal
+temp_max_c,TMAX,CSV de clima (dados_brutos.csv),Maior T do ar no dia,°C,média
+temp_min_c,TMIN,CSV de clima (dados_brutos.csv),Menor T do ar no dia,°C,média
+temp_media_c,TMEAN,CSV de clima (dados_brutos.csv),T média do ar no dia,°C,média
+precipitacao_mm,PRCP,CSV de clima (dados_brutos.csv),Chuva acumulada no dia,mm,soma
+vento_vel,VENTO,CSV de clima (dados_brutos.csv),Vel do vento (confira a unidade na fonte),km/h,média
+evapotranspiracao_mm,ETP,CSV de clima (dados_brutos.csv),Evapotranspiração potencial de referência no dia,mm,soma
+cafe_abertura_usc_lb,Open,yfinance (KC=F),Preço de abertura do futuro de café arábica,$US,-
+cafe_maxima_usc_lb,High,yfinance (KC=F),Preço máximo do dia,$US,-
+cafe_minima_usc_lb,Low,yfinance (KC=F),Preço mínimo do dia,$US,-
+cafe_fechamento_usc_lb,Close,yfinance (KC=F),Preço de fechamento (usado como preço de referência),$US,média (fechamento)
+cafe_volume_contratos,Volume,yfinance (KC=F),Contratos negociados no dia,contratos,-
+cafe_retorno_diario_pct,(calculada),derivada do fechamento,Variação percentual do fechamento em relação ao pregão anterior,%,-
+cafe_variacao_mensal_pct,(calculada),derivada do fechamento médio mensal,Variação percentual do preço médio mensal vs. mês anterior,%,-

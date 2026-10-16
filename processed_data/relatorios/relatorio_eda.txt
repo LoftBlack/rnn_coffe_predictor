@@ -1,0 +1,91 @@
+RELATÓRIO DE ANÁLISE EXPLORATÓRIA — IC_CAFE (CLIMA + CAFÉ ARÁBICA)
+======================================================================
+Arquivo de clima: C:\Users\joao3\Desktop\IC_Cafe\noaa_resultados\dados_brutos.csv
+Café: yfinance, ticker KC=F (¢US$/libra-peso)
+Período configurado: 2020-01-01 a 2025-12-31
+
+COBERTURA DOS DADOS
+  Clima: 2192 dias (2020-01-01 a 2025-12-31)
+  Café: 1511 pregões (2020-01-02 a 2025-12-31)
+  Dias com clima E café (base diária integrada): 1511
+  Meses na base mensal integrada: 72
+  Células ausentes (clima): 0
+
+QUALIDADE DOS DADOS (clima + café)
+                            tipo  valores_ausentes  percentual_ausente  valores_unicos
+coluna                                                                                
+temp_max_c               float64                 0                0.00             161
+temp_min_c               float64                 0                0.00             144
+temp_media_c             float64                 0                0.00             144
+precipitacao_mm          float64                 0                0.00             253
+vento_vel                float64                 0                0.00             197
+evapotranspiracao_mm     float64                 0                0.00             508
+cafe_abertura_usc_lb     float64               681               31.07            1242
+cafe_maxima_usc_lb       float64               681               31.07            1282
+cafe_minima_usc_lb       float64               681               31.07            1251
+cafe_fechamento_usc_lb   float64               681               31.07            1263
+cafe_volume_contratos    float64               681               31.07            1042
+cafe_retorno_diario_pct  float64               682               31.11            1496
+
+ESTATÍSTICAS DESCRITIVAS
+                          count        mean         std     min       25%       50%         75%         max   mediana  assimetria     variancia
+coluna                                                                                                                                         
+temp_max_c               2192.0     26.0805      2.8402  15.700   24.2000     26.00     27.9000     36.2000     26.00      0.1847  8.066600e+00
+temp_min_c               2192.0     16.4380      2.7254   5.600   14.4750     17.00     18.5000     24.3000     17.00     -0.5041  7.427900e+00
+temp_media_c             2192.0     20.8923      2.4953  11.000   19.2000     21.10     22.5000     29.8000     21.10     -0.1216  6.226400e+00
+precipitacao_mm          2192.0      3.4183      7.9522   0.000    0.0000      0.10      2.5000     87.4000      0.10      4.2536  6.323700e+01
+vento_vel                2192.0     15.4599      3.8568   6.300   12.6000     15.20     18.0250     31.3000     15.20      0.4265  1.487490e+01
+evapotranspiracao_mm     2192.0      4.1837      1.1281   0.820    3.4200      4.07      4.9700      8.0600      4.07      0.1060  1.272500e+00
+cafe_fechamento_usc_lb   1511.0    211.6572     85.6037  93.650  150.9500    193.60    243.0000    438.9000    193.60      0.8625  7.327990e+03
+cafe_retorno_diario_pct  1510.0      0.0933      2.3014  -8.626   -1.3677      0.00      1.5331     10.0284      0.00      0.1788  5.296300e+00
+cafe_abertura_usc_lb     1511.0    211.6563     85.5820  93.250  150.3750    193.40    243.0000    435.4000    193.40      0.8639  7.324274e+03
+cafe_maxima_usc_lb       1511.0    214.3680     86.8435  95.250  152.0000    195.75    245.4250    440.8500    195.75      0.8669  7.541785e+03
+cafe_minima_usc_lb       1511.0    209.0547     84.4465  92.700  148.6500    191.00    239.6000    424.0500    191.00      0.8604  7.131208e+03
+cafe_volume_contratos    1511.0  11873.3501  11331.8969   0.000   27.5000  12317.00  20322.5000  49900.0000  12317.00      0.4942  1.284119e+08
+
+CORRELAÇÃO DE PEARSON (dias de pregão)
+                         temp_max_c  temp_min_c  temp_media_c  precipitacao_mm  vento_vel  evapotranspiracao_mm  cafe_fechamento_usc_lb  cafe_retorno_diario_pct
+temp_max_c                   1.0000      0.6231        0.9086          -0.1496    -0.0344                0.7773                  0.1247                  -0.0163
+temp_min_c                   0.6231      1.0000        0.8735           0.3035    -0.0572                0.2485                  0.0653                   0.0136
+temp_media_c                 0.9086      0.8735        1.0000           0.0369    -0.0707                0.6060                  0.1045                  -0.0046
+precipitacao_mm             -0.1496      0.3035        0.0369           1.0000     0.0299               -0.4095                 -0.0149                   0.0060
+vento_vel                   -0.0344     -0.0572       -0.0707           0.0299     1.0000                0.1161                 -0.1752                   0.0025
+evapotranspiracao_mm         0.7773      0.2485        0.6060          -0.4095     0.1161                1.0000                  0.1186                  -0.0281
+cafe_fechamento_usc_lb       0.1247      0.0653        0.1045          -0.0149    -0.1752                0.1186                  1.0000                   0.0323
+cafe_retorno_diario_pct     -0.0163      0.0136       -0.0046           0.0060     0.0025               -0.0281                  0.0323                   1.0000
+
+CORRELAÇÕES COM cafe_fechamento_usc_lb (ordenadas pelo valor absoluto)
+variavel
+vento_vel                 -0.1752
+temp_max_c                 0.1247
+evapotranspiracao_mm       0.1186
+temp_media_c               0.1045
+temp_min_c                 0.0653
+cafe_retorno_diario_pct    0.0323
+precipitacao_mm           -0.0149
+
+DEFASAGENS (mensal): clima defasado em k meses vs. cafe_fechamento_usc_lb
+                          0m      1m      2m      3m      4m      5m      6m      7m      8m      9m     10m     11m     12m
+variavel_climatica                                                                                                          
+temp_max_c            0.2181  0.2035  0.2005  0.1829  0.1556  0.2001  0.2597  0.3192  0.3677  0.3745  0.3353  0.3486  0.3807
+temp_min_c            0.0839  0.0660  0.0636  0.0363  0.0226  0.0435  0.0703  0.1006  0.1354  0.1431  0.1585  0.1939  0.2052
+temp_media_c          0.1563  0.1401  0.1373  0.1151  0.0952  0.1345  0.1791  0.2251  0.2670  0.2777  0.2662  0.2930  0.3190
+precipitacao_mm      -0.0279 -0.0594 -0.0809 -0.0952 -0.0927 -0.1115 -0.1399 -0.1412 -0.1378 -0.1651 -0.1346 -0.0940 -0.1286
+vento_vel            -0.4081 -0.3842 -0.3798 -0.3830 -0.3651 -0.3359 -0.2855 -0.2632 -0.2740 -0.2764 -0.2902 -0.2606 -0.1527
+evapotranspiracao_mm  0.1958  0.1924  0.1800  0.1610  0.1254  0.1443  0.1841  0.2320  0.2653  0.2907  0.2254  0.2240  0.2542
+
+DEFASAGENS (mensal): clima defasado em k meses vs. cafe_variacao_mensal_pct
+                          0m      1m      2m      3m      4m      5m      6m      7m      8m      9m     10m     11m     12m
+variavel_climatica                                                                                                          
+temp_max_c            0.1809  0.0130  0.0917 -0.0292 -0.0543  0.0814  0.0112  0.0707  0.0748 -0.0074 -0.0485  0.1711  0.1138
+temp_min_c            0.1147  0.0772  0.0989 -0.0985 -0.0883 -0.0329 -0.0650 -0.0130  0.0284  0.0328  0.1728  0.2469  0.1444
+temp_media_c          0.1581  0.0515  0.1000 -0.0568 -0.0738  0.0370 -0.0275  0.0240  0.0495  0.0324  0.0605  0.2328  0.1392
+precipitacao_mm      -0.0669  0.0867  0.0194 -0.0409 -0.0865 -0.1390 -0.1724 -0.0843 -0.1337 -0.2151  0.0896  0.0739  0.0261
+vento_vel             0.0035 -0.0032 -0.0542 -0.0035  0.1218  0.0179  0.0233 -0.0676 -0.1846 -0.1630 -0.2198 -0.0409  0.1284
+evapotranspiracao_mm  0.1944  0.0335  0.0170  0.0196 -0.0230  0.0712  0.0103  0.0078 -0.0131 -0.0245 -0.2071  0.1147  0.0671
+
+OBSERVAÇÕES
+  - Correlação com o NÍVEL do preço pode ser espúria (séries com tendência);
+    a correlação com a VARIAÇÃO mensal é mais confiável para sinal de curto prazo.
+  - Chuva e ETP são somadas no mês; temperaturas e vento são médias.
+  - O contínuo KC=F troca de vencimento ao longo do tempo (pequenos saltos).
